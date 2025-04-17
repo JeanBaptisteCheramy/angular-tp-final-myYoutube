@@ -1,7 +1,13 @@
 <nav>
   <a routerLink="/home" routerLinkActive="active">My Youtube</a>
   <div class="right-block">
-    <a routerLink="/register" routerLinkActive="active">S'inscrire</a>
-    <a routerLink="/Login" routerLinkActive="active">Se connecter</a>
+    @if (authService.currentUserValue) {
+      <a (click)="logout()">Déconnexion</a>
+    }
+    @else{
+      <a routerLink="/register" routerLinkActive="active">S'inscrire</a>
+      <a routerLink="/login" routerLinkActive="active">Se connecter</a>
+    }
+  
   </div>
 </nav>

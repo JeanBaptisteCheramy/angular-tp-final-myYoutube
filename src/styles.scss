@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @use "@picocss/pico/scss";
-
+.container{
+    padding: 30px;
+}
 .error-message{
     color: rgb(219, 109, 109);
 }
