@@ -2,7 +2,7 @@
   <a routerLink="/home" routerLinkActive="active">My Youtube</a>
   <div class="right-block">
     @if (authService.currentUserValue) {
-      <a (click)="logout()">Déconnexion</a>
+      <p (click)="logout()">Déconnexion</p>
     }
     @else{
       <a routerLink="/register" routerLinkActive="active">S'inscrire</a>
