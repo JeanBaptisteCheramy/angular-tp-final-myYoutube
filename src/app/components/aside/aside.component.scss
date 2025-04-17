@@ -1,0 +1,14 @@
+aside {
+  width: 15vw;
+  height: 95vh;
+  padding-top: 20px;
+  background-color: #aaaaaa;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  p{
+    color: black;
+    font-weight: 700;
+  }
+}

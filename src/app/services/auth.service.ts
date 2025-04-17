@@ -2,7 +2,6 @@ import { inject, Injectable, signal } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -13,8 +12,6 @@ export class AuthService {
   );
   public currentUser$: Observable<any> = this.currentUserSubject.asObservable();
   private idCount = signal(1);
-
-  constructor() {}
 
   public get currentUserValue(): any {
     return this.currentUserSubject.value;
@@ -32,7 +29,7 @@ export class AuthService {
     const user = { username, token: 'LoggedInToken' };
     sessionStorage.setItem('currentUser', JSON.stringify(user));
     this.currentUserSubject.next(user)
-    // this.router.navigate(['/home']);
+    this.router.navigate(['/home']);
 
   }
 
