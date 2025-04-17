@@ -32,7 +32,7 @@ export class AuthService {
     const user = { username, token: 'LoggedInToken' };
     sessionStorage.setItem('currentUser', JSON.stringify(user));
     this.currentUserSubject.next(user)
-    this.router.navigate(['/home']);
+    // this.router.navigate(['/home']);
 
   }
 
