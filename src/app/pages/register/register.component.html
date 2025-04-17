@@ -1,0 +1,39 @@
+<div class="container">
+    <h3>S'enregistrer</h3>
+    <form [formGroup]="registerForm" (submit)="registerSubmit()">
+        <label>
+            Nom d'utilisateur:
+            <input type="text" formControlName="username">
+            @if (registerForm.get('username')?.touched && registerForm.get('username')?.dirty) {
+                @if (registerForm.get('username')?.errors?.['required']) {
+                    <span class="error-message">Le nom d'utilisateur est requis</span>
+                }
+            }
+        </label>
+        <label>
+            Email:
+            <input type="email" formControlName="email">
+            @if (registerForm.get('email')?.touched && registerForm.get('email')?.dirty) {
+                @if (registerForm.get('email')?.errors?.['required']) {
+                    <span class="error-message">L'email est requis</span>
+                }
+                @if (registerForm.get('email')?.errors?.['pattern']) {
+                    <span class="error-message">Le format de l'email n'est pas valide</span>
+                }
+            }
+        </label>
+        <label>
+            Mot de passe:
+            <input type="password" formControlName="password">
+            @if (registerForm.get('password')?.touched && registerForm.get('password')?.dirty) {
+                @if (registerForm.get('password')?.errors?.['required']) {
+                    <span class="error-message">Le mot de passe est requis</span>
+                }
+                @if (registerForm.get('password')?.errors?.['minlength']) {
+                    <span class="error-message">Le mot de passe doit contenir 8 caracatères minimum.</span>
+                }
+            }
+        </label>
+        <button>S'inscrire</button>
+    </form>
+</div>
