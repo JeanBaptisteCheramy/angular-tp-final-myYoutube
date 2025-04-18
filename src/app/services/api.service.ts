@@ -2,13 +2,14 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { catchError, Observable, throwError, of } from 'rxjs';
 import { YoutubeSearchResponse } from '../models/api-reponse';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
   private readonly http = inject(HttpClient);
-  private readonly API_KEY = "AIzaSyB68RqzddfbzcXDWjAO2E68i6s4RWqCQ0w"
+  private readonly API_KEY = environment.API_KEY
   private readonly API_URL = "https://www.googleapis.com/youtube/v3/search"
 
   getVideos(query: string): Observable<YoutubeSearchResponse> {
