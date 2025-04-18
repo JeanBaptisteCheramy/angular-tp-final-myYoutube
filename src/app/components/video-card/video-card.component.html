@@ -1,0 +1,9 @@
+<article data-theme="light">
+    <h5>{{video()?.snippet?.title}}</h5>
+    <img [src]="video()?.snippet?.thumbnails?.medium?.url" [alt]="video()?.snippet?.title" />
+    <div class="btns">
+        <button (click)="openVideo()">Regarder</button>
+        <button (click)="addToPlaylist()" class="outline">Ajouter</button>
+    </div>
+
+</article>

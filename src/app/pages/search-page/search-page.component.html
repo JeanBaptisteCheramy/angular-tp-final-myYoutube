@@ -13,3 +13,9 @@
     value="Rechercher"
   />
 </fieldset>
+
+<div class="container">
+    @for (video of searchResults()?.items; track video.id.videoId) {
+        <app-video-card [video]="video"></app-video-card>
+    }
+</div>
