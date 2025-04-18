@@ -1,0 +1,15 @@
+<h3>Rechercher</h3>
+
+<fieldset role="group">
+  <input
+    type="text"
+    placeholder="Rechercher une vidéo..."
+    [(ngModel)]="search"
+  />
+  <input
+    type="button"
+    (click)="submitSearch()"
+    [disabled]="!search || search.trim() === ''"
+    value="Rechercher"
+  />
+</fieldset>

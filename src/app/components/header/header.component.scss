@@ -16,5 +16,10 @@ nav {
     color: white;
     font-weight: bold;
     font-size: large;
+    transition: all .2s ease;
+  }
+  a.active {
+    color:#3d0909;
   }
 }
+
